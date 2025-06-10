@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smartphone Agreement</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        @media print {
+            .no-print {
+                display: none;
+            }
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .fillable, .fillable-long {
+                border-bottom: 1px solid #9ca3af !important;
+            }
+            .auto-filled-name {
+                color: #000 !important;
+                font-weight: normal !important;
+            }
+        }
+        .fillable {
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid #9ca3af; /* gray-400 */
+            width: 200px;
+            padding: 0.25rem 0.1rem;
+            outline: none;
+            text-align: center;
+            transition: border-color 0.2s;
+        }
+        .fillable:focus {
+            border-bottom: 2px solid #3b82f6; /* blue-500 */
+        }
+        .fillable-long {
+            width: 100%;
+        }
+        .auto-filled-name {
+            font-weight: 500;
+            color: #2563eb; /* blue-600 */
+            padding: 0 4px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Main Container for the Agreement -->
+    <div class="max-w-4xl mx-auto p-6 md:p-10 bg-white rounded-lg shadow-lg my-10">
+
+        <header class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-800">Smartphone Agreement</h1>
+        </header>
+
+        <!-- NEW: Master Name Inputs -->
+        <section class="mb-10 p-6 bg-gray-50 rounded-lg border border-gray-200">
+            <h2 class="text-xl font-bold text-gray-700 mb-4">Complete These Fields First</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label for="parent-main-name" class="block text-sm font-medium text-gray-700 mb-1">Parent/Guardian Name(s)</label>
+                    <input type="text" id="parent-main-name" class="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Enter parent/guardian name(s)">
+                </div>
+                <div>
+                    <label for="child-main-name" class="block text-sm font-medium text-gray-700 mb-1">Child's Name</label>
+                    <input type="text" id="child-main-name" class="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Enter child's name">
+                </div>
+            </div>
+        </section>
+
+        <!-- Between Section -->
+        <div class="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-2 mb-8 text-lg text-center">
+            <span>Between</span>
+            <span class="auto-filled-name parent-name-placeholder">[Parent/Guardian Name]</span>
+            <span>and</span>
+            <span class="auto-filled-name child-name-placeholder">[Child's Name]</span>
+        </div>
+        <div class="text-center mb-12">
+            <label for="date" class="mr-2 text-lg">Date:</label>
+            <input type="text" id="date" class="fillable" aria-label="Agreement date">
+        </div>
+
+        <!-- Purpose Section -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-700 border-b pb-2 mb-4">Purpose</h2>
+            <p class="text-gray-600 leading-relaxed">
+                The purpose of this agreement is to ensure that <span class="auto-filled-name child-name-placeholder">[Child's Name]</span> understands the responsibilities and expectations that come with owning and using a smartphone. This contract is designed to encourage responsible, safe, and respectful behaviour online and offline.
+            </p>
+        </section>
+
+        <!-- Parent Commitments Section -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-700 border-b pb-2 mb-4">Parent Commitments</h2>
+            <p class="text-gray-600 mb-4">We, <span class="auto-filled-name parent-name-placeholder">[Parent/Guardian Name]</span>, will:</p>
+            <ul class="space-y-3 text-gray-600 list-inside">
+                <li class="flex items-start"><span class="mr-3 text-green-500 text-2xl">☑</span>Provide <span class="auto-filled-name child-name-placeholder">[Child's Name]</span> with a smartphone.</li>
+                <li class="flex items-start"><span class="mr-3 text-green-500 text-2xl">☑</span>Pay for the monthly service (unless otherwise agreed).</li>
+                <li class="flex items-start"><span class="mr-3 text-green-500 text-2xl">☑</span>Support and guide <span class="auto-filled-name child-name-placeholder">[Child's Name]</span> in using the phone responsibly.</li>
+                <li class="flex items-start"><span class="mr-3 text-green-500 text-2xl">☑</span>Respect <span class="auto-filled-name child-name-placeholder">[Child's Name]</span>'s reasonable privacy while ensuring their safety.</li>
+            </ul>
+        </section>
+
+        <!-- Child Responsibilities Section -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-700 border-b pb-2 mb-4">Responsibilities</h2>
+            <p class="text-gray-600 mb-6">I, <span class="auto-filled-name child-name-placeholder">[Child's Name]</span>, agree to the following:</p>
+
+            <!-- Sub-sections for Responsibilities -->
+            <div class="space-y-6">
+                 <div>
+                    <h3 class="text-lg font-semibold text-gray-700 mb-3">1. Respect & Responsibility</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-500 rounded mt-1 mr-3 flex-shrink-0">I understand that the phone belongs to my parents and is being loaned to me.</li>
+                        <li class="flex items-start"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-500 rounded mt-1 mr-3 flex-shrink-0">I will treat the phone with care. If it is lost or broken, I understand I may be responsible for repair or replacement costs.</li>
+                        <li class="flex items-start"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-500 rounded mt-1 mr-3 flex-shrink-0">I will not use the phone to lie, bully, harass, or hurt others in any way.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-700 mb-3">2. Safety</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-500 rounded mt-1 mr-3 flex-shrink-0">I will not talk to, text, or share personal information with strangers.</li>
+                        <li class="flex items-start"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-500 rounded mt-1 mr-3 flex-shrink-0">I will never share my passwords, address, school name, or other private information online.</li>
+                        <li class="flex items-start"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-500 rounded mt-1 mr-3 flex-shrink-0">I will tell my parents immediately if I encounter anything upsetting or dangerous online. I know I will not get in trouble for bringing these things to their attention.</li>
+                    </ul>
+                </div>
+                <!-- Other sections remain the same... -->
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-700 mb-3">3. Screen Time & Use</h3>
+                     <ul class="space-y-3 text-gray-600 list-disc list-inside">
+                        <li>The phone will never be taken to my room without permission, and it will not stay in my room overnight.</li>
+                        <li>When the phone is in "downtime" mode or when it is bedtime, it will be placed in its designated charging holder in the porch.</li>
+                        <li>I will not use the phone during family meals or family activities unless I am given permission.</li>
+                        <li>I will balance phone use with homework, outdoor activities, and real-world friendships.</li>
+                    </ul>
+                </div>
+                 <div>
+                    <h3 class="text-lg font-semibold text-gray-700 mb-3">4. Apps & Downloads</h3>
+                     <ul class="space-y-3 text-gray-600 list-disc list-inside">
+                        <li>I will ask for permission before downloading any new apps or games.</li>
+                        <li>I will not access inappropriate websites or content.</li>
+                        <li>I will not try to bypass parental controls or restrictions.</li>
+                    </ul>
+                </div>
+                 <div>
+                    <h3 class="text-lg font-semibold text-gray-700 mb-3">5. Social Media</h3>
+                     <ul class="space-y-3 text-gray-600 list-disc list-inside">
+                        <li>I understand that I am below the legal age limit for most social media and messaging apps. I will not create an account or download any such app without a specific discussion and agreement with my parents.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-700 mb-3">6. Camera & Photos</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-500 rounded mt-1 mr-3 flex-shrink-0">I will always ask for permission before taking a photo or video of anyone.</li>
+                        <li class="flex items-start"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-500 rounded mt-1 mr-3 flex-shrink-0">I will not take or share photos or videos that could be embarrassing, hurtful, or inappropriate for others or myself.</li>
+                        <li class="flex items-start"><input type="checkbox" class="form-checkbox h-5 w-5 text-blue-500 rounded mt-1 mr-3 flex-shrink-0">I will be mindful of others' privacy and not take photos or videos in private places (like bathrooms or changing rooms).</li>
+                    </ul>
+                </div>
+                 <div>
+                    <h3 class="text-lg font-semibold text-gray-700 mb-3">7. Financial Responsibility</h3>
+                     <ul class="space-y-3 text-gray-600 list-disc list-inside">
+                        <li>I will not make any in-app purchases, online purchases, or subscriptions of any kind unless I have clear permission from my parents first.</li>
+                        <li>I understand that using too much mobile data may result in extra charges, and I will manage my data usage responsibly.</li>
+                    </ul>
+                </div>
+                 <div>
+                    <h3 class="text-lg font-semibold text-gray-700 mb-3">8. Additional Rules</h3>
+                     <ul class="space-y-3 text-gray-600 list-disc list-inside">
+                        <li>I will not attempt to remove or bypass any of the parental restrictions set on the phone.</li>
+                        <li>I will hand the device to my parents to inspect at any time, upon request and without protest. If I do not, I understand that the phone will be taken from me.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Consequences Section -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-700 border-b pb-2 mb-4">Consequences</h2>
+            <p class="text-gray-600 leading-relaxed">
+                I understand that if I break this agreement, I may lose phone privileges for a period of time. If the misuse is serious or happens repeatedly, this privilege may be revoked permanently.
+            </p>
+        </section>
+        
+        <!-- Acknowledgement Section -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-700 border-b pb-2 mb-4">Acknowledgement</h2>
+            <p class="text-gray-600 leading-relaxed">
+                By signing below, we agree to this contract and promise to review it together regularly to make sure it is still working for our family.
+            </p>
+        </section>
+
+        <!-- Signature Area -->
+        <section class="mt-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Parent Signature Block -->
+                <div class="space-y-8">
+                    <div>
+                        <label class="block text-gray-700">Parent(s) Signature:</label>
+                        <div class="h-12 border-b border-gray-400"></div>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700">Parent(s) Name:</label>
+                        <p class="h-8 py-1 border-b border-gray-300 text-gray-800 parent-name-placeholder">[Parent/Guardian Name]</p>
+                    </div>
+                     <div>
+                        <label for="parent-date" class="block text-gray-700">Date:</label>
+                        <input type="text" id="parent-date" class="fillable fillable-long" aria-label="Parent signature date">
+                    </div>
+                </div>
+                <!-- Child Signature Block -->
+                 <div class="space-y-8">
+                    <div>
+                        <label class="block text-gray-700">Child's Signature:</label>
+                        <div class="h-12 border-b border-gray-400"></div>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700">Child's Name:</label>
+                        <p class="h-8 py-1 border-b border-gray-300 text-gray-800 child-name-placeholder">[Child's Name]</p>
+                    </div>
+                     <div>
+                        <label for="child-date" class="block text-gray-700">Date:</label>
+                        <input type="text" id="child-date" class="fillable fillable-long" aria-label="Child signature date">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+
+    <!-- Print Button -->
+    <div class="max-w-4xl mx-auto text-center mb-10 no-print">
+        <button onclick="window.print()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg shadow-md transition-transform transform hover:scale-105">
+            Print Agreement
+        </button>
+    </div>
+
+    <script>
+        // This script handles the automatic population of names throughout the document.
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Get references to all the elements ---
+            const parentNameInput = document.getElementById('parent-main-name');
+            const childNameInput = document.getElementById('child-main-name');
+            const dateInput = document.getElementById('date');
+            
+            const parentNamePlaceholders = document.querySelectorAll('.parent-name-placeholder');
+            const childNamePlaceholders = document.querySelectorAll('.child-name-placeholder');
+
+            // --- Set today's date automatically ---
+            const today = new Date();
+            const formattedDate = today.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+            dateInput.value = formattedDate;
+
+            // --- Function to update placeholders ---
+            const updatePlaceholders = (inputElement, placeholderElements, defaultText) => {
+                const value = inputElement.value.trim();
+                placeholderElements.forEach(el => {
+                    el.textContent = value === '' ? defaultText : value;
+                });
+            };
+
+            // --- Add event listeners for live updates ---
+            parentNameInput.addEventListener('input', () => {
+                updatePlaceholders(parentNameInput, parentNamePlaceholders, '[Parent/Guardian Name]');
+            });
+
+            childNameInput.addEventListener('input', () => {
+                updatePlaceholders(childNameInput, childNamePlaceholders, "[Child's Name]");
+            });
+
+            // --- Initial placeholder text setup ---
+            // This ensures the placeholder text is visible on load.
+             updatePlaceholders(parentNameInput, parentNamePlaceholders, '[Parent/Guardian Name]');
+             updatePlaceholders(childNameInput, childNamePlaceholders, "[Child's Name]");
+        });
+    </script>
+
+</body>
+</html>
